@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	">
+
+	<bean id="userDao" class="com.riawworks.riaw.erp.dao.impl.UserDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="menuDao" class="com.riawworks.riaw.erp.dao.impl.MenuDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="measurementUnitDao" class="com.riawworks.riaw.erp.dao.impl.MeasurementUnitDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="productDao" class="com.riawworks.riaw.erp.dao.impl.ProductDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="productPricingDao" class="com.riawworks.riaw.erp.dao.impl.ProductPricingDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="deliveryNoteDao" class="com.riawworks.riaw.erp.dao.impl.DeliveryNoteDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="deliveryNoteDetailDao"
+		class="com.riawworks.riaw.erp.dao.impl.DeliveryNoteDetailDaoImpl"
+		parent="dao">
+	</bean>
+
+	<bean id="customerDao" class="com.riawworks.riaw.erp.dao.impl.CustomerDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="customizedProductPricingDao"
+		class="com.riawworks.riaw.erp.dao.impl.CustomizedProductPricingDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="costAllocationRecordDao"
+		class="com.riawworks.riaw.erp.dao.impl.CostAllocationRecordDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="costAllocationSubjectDao"
+		class="com.riawworks.riaw.erp.dao.impl.CostAllocationSubjectDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="humanDao" class="com.riawworks.riaw.erp.dao.impl.HumanDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="partnerDao" class="com.riawworks.riaw.erp.dao.impl.PartnerDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="userMenuDao" class="com.riawworks.riaw.erp.dao.impl.UserMenuDaoImpl"
+		parent="dao"></bean>
+
+	<bean id="costAllocationFormulaVarDao" class="com.riawworks.riaw.erp.dao.impl.CostAllocationFormulaVarDaoImpl"
+		parent="dao"></bean>
+</beans>

@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bill-report" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="450e6044-f8a7-4713-9f36-609ffcab7e4f">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="detail" uuid="641c2247-df3d-4318-8383-f53bbb3c2301">
+		<field name="charge" class="java.lang.Double">
+			<fieldDescription><![CDATA[charge]]></fieldDescription>
+		</field>
+		<field name="chargingType" class="java.lang.String">
+			<fieldDescription><![CDATA[chargingType]]></fieldDescription>
+		</field>
+		<field name="data" class="java.lang.Double">
+			<fieldDescription><![CDATA[data]]></fieldDescription>
+		</field>
+		<field name="formula" class="java.lang.String">
+			<fieldDescription><![CDATA[formula]]></fieldDescription>
+		</field>
+		<field name="lastMonthData" class="java.lang.Double">
+			<fieldDescription><![CDATA[lastMonthData]]></fieldDescription>
+		</field>
+		<field name="subjectName" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectName]]></fieldDescription>
+		</field>
+		<variable name="sum" class="java.lang.Double" calculation="Sum">
+			<variableExpression><![CDATA[$F{charge}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="billReportDetailVos" class="java.util.List">
+		<fieldDescription><![CDATA[billReportDetailVos]]></fieldDescription>
+	</field>
+	<field name="name" class="java.lang.String">
+		<fieldDescription><![CDATA[name]]></fieldDescription>
+	</field>
+	<field name="period" class="java.lang.String">
+		<fieldDescription><![CDATA[period]]></fieldDescription>
+	</field>
+	<title>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="136" y="34" width="287" height="20" uuid="c0467eaf-6838-490f-844f-33dcedb0c800"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="宋体" size="15" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[上海康企豆制品有限公司分摊计费帐单]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="85" width="64" height="20" uuid="c5e3b6ac-a19e-4cf7-954e-9233b1759298"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[承包商：]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="376" y="105" width="64" height="20" uuid="f966cfec-0a6e-4888-a672-e3dd742f1a7a"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[账单账期：]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="440" y="85" width="100" height="20" uuid="22d68d5f-fb5c-4257-a280-82f3d4a92936"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="440" y="105" width="100" height="20" uuid="301eaad9-15d0-4a90-ba4b-e94586900fae"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{period}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="80" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table 3" style="table 3" x="50" y="0" width="450" height="80" uuid="aefa7a88-8357-4bb3-9cd3-6f13032254bb"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="detail" uuid="3f76031b-d2d3-4a39-bc79-59c64935f916">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{billReportDetailVos})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:columnGroup width="180" uuid="7bca5328-0fd0-44fe-8a74-323d01d69e29">
+						<jr:columnFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="180" height="30" uuid="2e3d78f8-e1ae-4c5a-a1c9-8b60862a4df6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+								</textElement>
+								<text><![CDATA[合计]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:column width="90" uuid="f6982e27-efce-418e-bca2-36610ea46294">
+							<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="876cb656-7ad3-4f5e-a047-004cab0050d5"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[计费科目]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 3_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="596a778e-09a1-437f-9b91-239bd4e9f9ad"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+										<paragraph leftIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="e888e95f-9ad1-4017-9b6c-c94147579004">
+							<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="0e82a378-049c-474b-989a-3dd16e42866a"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[上月数据]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 3_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="0a53ed16-aa02-4b71-a672-018518f32c13"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+										<paragraph rightIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{lastMonthData}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:columnGroup width="180" uuid="e3864a1c-c734-4cc5-bd53-2cdff1f07e11">
+						<jr:columnFooter height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="180" height="30" uuid="7f943626-15bc-4663-b82d-fa48159cdf86"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[com.riawworks.riaw.erp.framework.util.MoneyChinesization.parse($V{sum}.toString())]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:column width="90" uuid="f4b9d0b0-db0b-411e-9f42-7a0eec02a64a">
+							<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="1556e933-47ce-4fde-b9ae-6f9a742b9ae1"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[本月数据]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 3_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="95803691-02fa-42c5-bdce-df0dc2bcb03a"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+										<paragraph rightIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{data}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+						<jr:column width="90" uuid="601f87be-43da-4d13-a2a7-17d868ef6a33">
+							<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="00bad2e6-72d5-44a4-94a5-91ae44a884f3"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[计费类型]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 3_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="f914567f-09bf-452a-a31f-59e1a6f7d2f7"/>
+									<textElement verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+										<paragraph leftIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{chargingType}.equals( "0" )?"累计计费":"当前计费"]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+					<jr:columnGroup width="90" uuid="a18dd2f9-5549-40fa-bcd6-507c0babf6c8">
+						<jr:columnFooter height="30" rowSpan="1">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="30" uuid="4750a9af-b704-4275-b8b0-d10d392b4eb5"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{sum}==0?0:(java.lang.Math.round($V{sum}*100)/100.0)]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:column width="90" uuid="cd9c8c5d-37b4-459e-a1e6-179fdaca6b57">
+							<jr:columnHeader style="table 3_CH" height="30" rowSpan="1">
+								<staticText>
+									<reportElement x="0" y="0" width="90" height="30" uuid="f7ad94d4-76d9-460d-9082-89a451913f33"/>
+									<textElement textAlignment="Center" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+									</textElement>
+									<text><![CDATA[金额]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:detailCell style="table 3_TD" height="20" rowSpan="1">
+								<textField>
+									<reportElement x="0" y="0" width="90" height="20" uuid="a1e257e1-d1c3-479d-8209-9f328704d2d7"/>
+									<textElement textAlignment="Right" verticalAlignment="Middle">
+										<font fontName="宋体" pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+										<paragraph rightIndent="5"/>
+									</textElement>
+									<textFieldExpression><![CDATA[$F{charge}]]></textFieldExpression>
+								</textField>
+							</jr:detailCell>
+						</jr:column>
+					</jr:columnGroup>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="20">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" uuid="a97556c1-29a4-41ec-9cb5-4084fe8ef299"/>
+				<textElement>
+					<font pdfFontName="STSong-Light" pdfEncoding="UniGB-UCS2-H" isPdfEmbedded="true"/>
+				</textElement>
+				<text><![CDATA[备注：计费单价：水：5元／吨  电：1.1元／度  排风扇：1.1元／度 蒸汽卫生费： 0.32元／公斤]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	">
+
+	<bean id="userService"
+		class="com.riawworks.riaw.erp.service.resources.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+		<property name="menuDao" ref="menuDao"></property>
+		<property name="humanBeanFactory" ref="humanBeanFactory"></property>
+	</bean>
+
+	<bean id="productService"
+		class="com.riawworks.riaw.erp.service.resources.impl.ProductServiceImpl">
+		<property name="productDao" ref="productDao"></property>
+		<property name="measurementUnitDao" ref="measurementUnitDao"></property>
+		<property name="customizedProductPricingDao" ref="customizedProductPricingDao"></property>
+		<property name="productPricingDao" ref="productPricingDao"></property>
+	</bean>
+
+	<bean id="productCodeService"
+		class="com.riawworks.riaw.erp.service.resources.impl.ProductCodeServiceImpl">
+		<property name="measurementUnitDao" ref="measurementUnitDao"></property>
+		<property name="productDao" ref="productDao"></property>
+	</bean>
+
+	<bean id="customerService"
+		class="com.riawworks.riaw.erp.service.resources.impl.CustomerServiceImpl">
+		<property name="customerBeanFactory" ref="customerBeanFactory"></property>
+		<property name="customerDao" ref="customerDao"></property>
+		<property name="customizedProductPricingDao" ref="customizedProductPricingDao"></property>
+		<property name="measurementUnitDao" ref="measurementUnitDao"></property>
+		<property name="productBeanFactory" ref="productBeanFactory"></property>
+		<property name="productDao" ref="productDao"></property>
+		<property name="productPricingDao" ref="productPricingDao"></property>
+		<property name="codeGeneratorFactory" ref="codeGeneratorFactory"></property>
+	</bean>
+
+</beans>

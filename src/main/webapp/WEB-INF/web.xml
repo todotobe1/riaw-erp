@@ -3,5 +3,90 @@
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
-  <display-name>Archetype Created Web Application</display-name>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:spring/**/riaw-*-context-*.xml
+		</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>LicenceFilter</filter-name>
+		<filter-class>com.riawworks.riaw.erp.framework.filter.LicenceFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>ContextPathSetterFilter</filter-name>
+		<filter-class>com.riawworks.riaw.erp.framework.filter.ContextPathSetterFilter</filter-class>
+	</filter>
+
+	<filter>
+		<filter-name>UserAuthenticationFilter</filter-name>
+		<filter-class>com.riawworks.riaw.erp.filter.UserAuthenticationFilter</filter-class>
+		<init-param>
+			<param-name>exception</param-name>
+			<param-value>
+				/,
+				/human/user/log/index.htm,
+				/human/user/log/in.htm,
+				.+\.js,
+				.+\.css,
+				.+\.gif,
+				.+\.png
+			</param-value>
+		</init-param>
+	</filter>
+
+	<filter>
+		<filter-name>UserContextFilter</filter-name>
+		<filter-class>com.riawworks.riaw.erp.filter.UserContextFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LicenceFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>ContextPathSetterFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>UserAuthenticationFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<filter-mapping>
+		<filter-name>UserContextFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>riaw-webapp</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+				classpath:spring/framework/riaw-framework-servlet.xml,
+			</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>riaw-webapp</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<welcome-file-list>
+		<welcome-file>/index.jsp</welcome-file>
+	</welcome-file-list>
+
 </web-app>
